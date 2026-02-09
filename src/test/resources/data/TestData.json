@@ -1,0 +1,114 @@
+[
+  {
+    "name": "valid request",
+    "request": {
+      "fareAmount": 100,
+      "currency": "USD",
+      "cabinClass": "ECONOMY",
+      "customerTier": "SILVER",
+      "promoCode": "SUMMER25"
+    },
+    "expectedStatus": 200
+  },
+  {
+    "name": "invalid fare",
+    "request": {
+      "fareAmount": -1,
+      "currency": "USD",
+      "cabinClass": "ECONOMY",
+      "customerTier": "SILVER"
+    },
+    "expectedStatus": 400
+  },
+  {
+    "name": "missing currency",
+    "request": {
+      "fareAmount": 100,
+      "cabinClass": "ECONOMY",
+      "customerTier": "SILVER"
+    },
+    "expectedStatus": 400
+  },
+  {
+    "name": "zero fare",
+    "request": {
+      "fareAmount": 0,
+      "currency": "USD",
+      "cabinClass": "ECONOMY",
+      "customerTier": "SILVER"
+    },
+    "expectedStatus": 400
+  },
+  {
+    "name": "invalid cabin class",
+    "request": {
+      "fareAmount": 100,
+      "currency": "USD",
+      "cabinClass": "SPACE",
+      "customerTier": "SILVER"
+    },
+    "expectedStatus": 400
+  },
+  {
+    "name": "invalid currency",
+    "request": {
+      "fareAmount": 100,
+      "currency": "ABC",
+      "cabinClass": "ECONOMY",
+      "customerTier": "SILVER"
+    },
+    "expectedStatus": 400
+  },
+  {
+    "name": "platinum customer tier",
+    "request": {
+      "fareAmount": 300,
+      "currency": "USD",
+      "cabinClass": "BUSINESS",
+      "customerTier": "PLATINUM"
+    },
+    "expectedStatus": 200
+  },
+  {
+    "name": "gold customer tier",
+    "request": {
+      "fareAmount": 200,
+      "currency": "USD",
+      "cabinClass": "BUSINESS",
+      "customerTier": "GOLD"
+    },
+    "expectedStatus": 200
+  },
+  {
+    "name": "invalid promo code",
+    "request": {
+      "fareAmount": 100,
+      "currency": "USD",
+      "cabinClass": "ECONOMY",
+      "customerTier": "SILVER",
+      "promoCode": "INVALID"
+    },
+    "expectedStatus": 200
+  },
+  {
+    "name": "points cap applied",
+    "request": {
+      "fareAmount": 1000000,
+      "currency": "USD",
+      "cabinClass": "BUSINESS",
+      "customerTier": "PLATINUM"
+    },
+    "expectedStatus": 200
+  },
+  {
+    "name": "promo expired",
+    "request": {
+      "fareAmount": 100,
+      "currency": "USD",
+      "cabinClass": "ECONOMY",
+      "customerTier": "SILVER",
+      "promoCode": "EXPIRED10"
+    },
+    "expectedStatus": 200
+  }
+]
