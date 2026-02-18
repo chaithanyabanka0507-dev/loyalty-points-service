@@ -1,0 +1,12 @@
+{
+  "fx": {
+    "baseUrl": "http://localhost:8081",
+    "path": "/fx",
+    "maxRetries": 2
+  },
+  "promo": {
+    "baseUrl": "http://localhost:8082",
+    "timeoutMs": 500,
+    "expiryWarningDays": 3
+  }
+}

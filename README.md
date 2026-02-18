@@ -46,6 +46,23 @@ The service applies FX conversion, tier bonuses, promotional rules, validation, 
 }
 ```
 
+## API Versioning
+
+The API follows URI-based versioning.
+
+Current version: v1
+
+Example endpoint:
+POST /v1/points/quote
+
+Versioning rules:
+- Breaking changes introduce a new version (v2, v3).
+- Non-breaking enhancements remain within the same version.
+- Deprecated versions may include:
+  - Deprecation: true
+  - Sunset: <date>
+- Future enhancement may include header-based versioning.
+
 ---
 
 ## 📐 Business Rules Implemented
