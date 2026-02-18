@@ -23,10 +23,6 @@ import java.nio.charset.StandardCharsets;
  *     -Apply maximum cap
  *
  *
- * @param request the incoming quote request containing fare,
- *                currency, cabin class, customer tier and optional promo code
- * @return a {@link Future} containing the computed {@link QuoteResponse}
- *         or a failed Future if validation or external service calls fail
  */
 public class LoyaltyApplication {
 
